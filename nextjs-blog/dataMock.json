@@ -1,0 +1,18 @@
+{
+  "base_experience": 265,
+  "height": 16,
+  "id": 9,
+  "name": "blastoise",
+  "order": 12,
+  "past_types": [],
+  "types": [
+    {
+      "slot": 1,
+      "type": {
+        "name": "water",
+        "url": "https://pokeapi.co/api/v2/type/11/"
+      }
+    }
+  ],
+  "weight": 855
+}

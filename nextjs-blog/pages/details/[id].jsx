@@ -12,8 +12,8 @@ export default function Details() {
     const load_page = async () => {
         const raw = await get_pokemon(id)
         const {name} = raw
-        const icon = raw.sprites.versions['generation-vii']['icons']['front_default']
-        const sprite = raw.sprites.versions['generation-v']['black-white']['animated']['front_default']
+        const icon = raw.icon//sprites.versions['generation-vii']['icons']['front_default']
+        const sprite = raw.sprite//sprites.versions['generation-v']['black-white']['animated']['front_default']
 
         setData({id, name, icon, sprite})
     }
@@ -32,9 +32,20 @@ export default function Details() {
         </Link>
         <div className='pokedex'>
             <img className='sprite' src={ data.sprite } alt={ `${data.name} sprite` } />
-            <div className='pokedex'>
-                <h1>{data.name}</h1>
-                <h1>{data.id}</h1>
+            <div className='transparent-div wide'>
+                <p className='name'>{`${data.id} ${data.name}`}</p>
+                <img src={ data.icon } alt={ `${data.name} icon` } />
+            </div>
+            <div className='white-div wide'>
+                <p className='name'>{`${data.id} ${data.name}`}</p>
+                <img src={ data.icon } alt={ `${data.name} icon` } />
+            </div>
+            <div className='black-div wide'>
+                <p className='name'>{`${data.id} ${data.name}`}</p>
+                <img src={ data.icon } alt={ `${data.name} icon` } />
+            </div>
+            <div className='red-div wide'>
+                <p className='name'>{`${data.id} ${data.name}`}</p>
                 <img src={ data.icon } alt={ `${data.name} icon` } />
             </div>
         </div>

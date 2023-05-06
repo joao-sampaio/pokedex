@@ -56,7 +56,7 @@ body {
   #465298 60%);
 
   background-size: 100px 100px;
-  animation: move-it 2s linear infinite;
+  animation: move-it 4s linear infinite;
 }
 
 .flex {
@@ -108,12 +108,11 @@ body {
 
 .name {
   color: antiquewhite;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .sprite {
-  width: 80%;
-  image-rendering: auto;
-  image-rendering: crisp-edges;
+  width: 40%;
   image-rendering: pixelated;
 }
 
@@ -125,4 +124,34 @@ body {
   border-radius: 0px 0px 10px 0px;
   background-color: rgb(255, 84, 84);
   border: rgb(168, 37, 37) 3px solid;
+}
+
+.wide {
+  width: 100%;
+}
+
+.transparent-div {
+  background-color: rgba(91, 168, 223, 0.5);
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.white-div {
+  background-color: rgb(223, 223, 223);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.black-div {
+  background-color: rgb(53, 53, 53);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.red-div {
+  background-color: rgb(222, 25, 25);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
