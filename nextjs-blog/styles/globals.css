@@ -1,0 +1,128 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  /* font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  /* font-family: 'Common Pixel', sans-serif; */
+  font-family: 'SpaceType', sans-serif;
+                                                
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+@keyframes move-it {
+  0% {
+    background-position: initial;
+  }
+  100% {
+    background-position: 100px 0px;
+  }
+}
+
+body {
+  background: repeating-linear-gradient(
+  60deg,
+  #606dbc,
+  #465298 60%);
+
+  background-size: 100px 100px;
+  animation: move-it 2s linear infinite;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokedex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-card {
+  background-color: rgb(255, 84, 84);
+  border: rgb(168, 37, 37) 4px solid;
+  border-radius: 10px 0px 10px 0px;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.icon-card {
+  border-radius: 10px 0px 00px 0px;
+  width: 80px;
+}
+
+.data-card {
+  border-radius: 0px 0px 10px 0px;
+  background-color: rgb(255, 84, 84);
+  border: rgb(168, 37, 37) 3px solid;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.id {
+  color: antiquewhite;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  background-color: rgb(168, 37, 37);
+}
+
+.name {
+  color: antiquewhite;
+}
+
+.sprite {
+  width: 80%;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+.back-button {
+  position: fixed;
+  margin-top: 12px;
+  margin-left: 7px;
+  
+  border-radius: 0px 0px 10px 0px;
+  background-color: rgb(255, 84, 84);
+  border: rgb(168, 37, 37) 3px solid;
+}
