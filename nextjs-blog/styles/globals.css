@@ -57,6 +57,7 @@ body {
 
   background-size: 100px 100px;
   animation: move-it 4s linear infinite;
+  overflow-y: hidden;
 }
 
 .flex {
@@ -158,6 +159,7 @@ body {
 .red-div {
   background-color: rgb(222, 25, 25);
   flex: 3 0 auto;
+  height: 500px;
 }
 
 .type-card {
