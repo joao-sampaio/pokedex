@@ -2,6 +2,7 @@ import { get_pokemon } from '../../services/requests';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import TypeCard from '../../components/types-card';
 
 export default function Details() {
     const [data, setData] = useState({})
@@ -11,11 +12,7 @@ export default function Details() {
 
     const load_page = async () => {
         const raw = await get_pokemon(id)
-        const {name} = raw
-        const icon = raw.sprites.versions['generation-vii']['icons']['front_default']
-        const sprite = raw.sprites.versions['generation-v']['black-white']['animated']['front_default']
-
-        setData({id, name, icon, sprite})
+        setData(raw)
     }
 
     useEffect( () => {
@@ -30,12 +27,20 @@ export default function Details() {
         <Link href={`/`}>
             <button  className='back-button'>back</button>
         </Link>
-        <div className='pokedex'>
+        <div className='details'>
             <img className='sprite' src={ data.sprite } alt={ `${data.name} sprite` } />
-            <div className='pokedex'>
-                <h1>{data.name}</h1>
-                <h1>{data.id}</h1>
+            <div className='transparent-div wide'>
+                <p className='name'>{`${data.id} ${data.name}`}</p>
                 <img src={ data.icon } alt={ `${data.name} icon` } />
+            </div>
+            <div className='white-div wide'>
+                {data.types && data.types.map((type, index) => <TypeCard key={index} type={type}/>)}
+            </div>
+            <div className='black-div wide'>
+                <p className=''>{`height: ${data.height/10} m`}</p>
+                <p className=''>{`weight: ${data.weight/10} kg`}</p>
+            </div>
+            <div className='flex red-div wide'>
             </div>
         </div>
         </>

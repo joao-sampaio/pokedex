@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import PokemonCard from '../components/pokemon-card';
 import { get_page, get_pokemon } from '../services/requests';
 import { useState, useEffect } from 'react';
@@ -28,18 +27,13 @@ export default function Home() {
       if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight*0.7) {
         load_page()
       }
+      
     }, 400);
     return () => clearTimeout(timer);
   })
 
   return (
     <>
-      <Head>
-        <title>Pokedex</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link href="https://fonts.cdnfonts.com/css/spacetype" rel="stylesheet"></link>
-      </Head>
-
       <main>
         <div className='pokedex'>
           {
