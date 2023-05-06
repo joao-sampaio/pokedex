@@ -57,7 +57,6 @@ body {
 
   background-size: 100px 100px;
   animation: move-it 4s linear infinite;
-  overflow-y: hidden;
 }
 
 .flex {
@@ -142,7 +141,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: stretch;
-
+  height: 100%;
+  overflow-y: hidden;
 }
 
 .transparent-div {
