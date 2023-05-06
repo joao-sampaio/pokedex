@@ -1,11 +1,8 @@
 import Link from 'next/link';
 
-
-//sprite: sprites[versions][generation-v][black-white][animated][front_default]
-//icon: sprites[versions][generation-vii][icons][front_default]
 export default function PokemonCard(props) {
     const {id, name} = props.data
-    const icon = props.data.sprites.versions['generation-vii']['icons']['front_default']
+    const icon = props.data.icon
     return (
         <Link href={`/details/${id}`}>
         <div className="pokemon-card">

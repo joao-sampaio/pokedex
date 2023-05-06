@@ -24,9 +24,9 @@ export default function Home() {
   useEffect( () => {
     console.log(window.innerHeight, window.innerHeight + window.pageYOffset, document.body.offsetHeight)
     const timer = setInterval(() => {
-      // if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight*0.7) {
-      //   load_page()
-      // }
+      if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight*0.7) {
+        load_page()
+      }
       
     }, 400);
     return () => clearTimeout(timer);

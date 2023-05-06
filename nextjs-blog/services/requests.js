@@ -44,6 +44,8 @@ const updatePkmCache = (newPkm) => {
 
 export const get_pokemon = async (url) => {
     const id = url.length > 5 ? url.match(/\/\d+\//)[0].replace('/', '').replace('/', '') : url
+    // const id = url.length > 5 ? url.match(/\/\w+\//i)[0].replace('/', '').replace('/', '') : url
+
     const cache = getPkmCache()
     if (cache && id in cache) {
         console.log('CACHE PKM')
@@ -56,9 +58,12 @@ export const get_pokemon = async (url) => {
     delete data.moves
     delete data.abilities
     delete data.game_indices
+    delete data.forms
+    delete data.species
     data.sprite = data.sprites.versions['generation-v']['black-white']['animated']['front_default']
     data.icon = data.sprites.versions['generation-vii']['icons']['front_default']
     delete data.sprites
+    data.types = data.types.map((type) => type.type.name)
     updatePkmCache(data)
     console.log('NO CACHE!!! PKM')
     return data

@@ -68,6 +68,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .pokemon-card {
@@ -128,30 +129,112 @@ body {
 
 .wide {
   width: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 30px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+
 }
 
 .transparent-div {
   background-color: rgba(91, 168, 223, 0.5);
   
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
 .white-div {
   background-color: rgb(223, 223, 223);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
 .black-div {
   background-color: rgb(53, 53, 53);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  color: rgb(222, 25, 25);
 }
 .red-div {
   background-color: rgb(222, 25, 25);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex: 3 0 auto;
 }
+
+.type-card {
+  border: #000 outset 2px;
+  border-radius: 30px;
+  height: 20px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grass {
+  background-color: rgb(54, 168, 54);
+}
+
+.poison {
+  background-color: rgb(98, 54, 168);
+}
+
+.fire {
+  background-color: rgb(224, 60, 51);
+}
+
+.flying {
+  background-color: rgb(88, 160, 196);
+}
+
+.water {
+  background-color: rgb(58, 149, 214);
+}
+
+.bug {
+  background-color: rgb(157, 214, 58);
+}
+
+.electric {
+  background-color: rgb(211, 214, 58);
+}
+
+.ground {
+  background-color: rgb(214, 118, 58);
+}
+
+.rock {
+  background-color: rgb(171, 79, 37);
+}
+
+.psychic {
+  background-color: rgb(168, 54, 160);
+}
+
+.fighting {
+  background-color: rgb(113, 23, 23);
+}
+
+.ice {
+  background-color: rgb(159, 255, 233);
+}
+
+.ghost {
+  background-color: rgb(115, 78, 219);
+}
+
+.steel {
+  background-color: rgb(178, 178, 178);
+}
+
+.dragon {
+  background-color: rgb(154, 118, 255);
+}
+
+.dark {
+  background-color: rgb(37, 22, 19);
+}
+
+.fairy {
+  background-color: rgb(255, 131, 236);
+}
+
