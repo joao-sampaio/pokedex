@@ -113,7 +113,8 @@ body {
 }
 
 .sprite {
-  width: 40%;
+  /* width: 40%; */
+  min-height: 40%;
   image-rendering: pixelated;
 }
 
@@ -152,14 +153,15 @@ body {
 
 .transparent-div {
   background-color: rgba(91, 168, 223, 0.5);
-  
 }
 .white-div {
   background-color: rgb(223, 223, 223);
+  min-height: 30px;
 }
 .black-div {
   background-color: rgb(53, 53, 53);
   color: rgb(222, 25, 25);
+  min-height: 50px;
 }
 .red-div {
   background-color: rgb(222, 25, 25);
