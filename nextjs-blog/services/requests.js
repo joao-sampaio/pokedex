@@ -14,7 +14,7 @@ const updatePagesCache = (newResults, nextPage) => {
 
 export const get_page = async (url) => {
     const cache = getPagesCache()
-    if (!url && cache) {
+    if (!url && cache && url === cache.nextPage) {
         console.log('CACHE PAGE')
         return new Promise((resolve, reject) => {
             resolve(cache)
