@@ -145,6 +145,11 @@ body {
   overflow-y: hidden;
 }
 
+.height-limit {
+  overflow-y: hidden;
+  height: 100vh;
+}
+
 .transparent-div {
   background-color: rgba(91, 168, 223, 0.5);
   
@@ -159,7 +164,7 @@ body {
 .red-div {
   background-color: rgb(222, 25, 25);
   flex: 3 0 auto;
-  height: 500px;
+  height: 800px;
 }
 
 .type-card {
