@@ -23,7 +23,7 @@ export default function Details() {
     }, [id])
 
     return (
-        <>
+        <div className='height-limit'>
         <Link href={`/`}>
             <button  className='back-button'>back</button>
         </Link>
@@ -43,6 +43,6 @@ export default function Details() {
             <div className='flex red-div wide'>
             </div>
         </div>
-        </>
+        </div>
     )
 }
