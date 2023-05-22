@@ -26,7 +26,7 @@ export const get_page = async (url) => {
         data.results.splice(3, 3)
     }
     updatePagesCache(data.results, data.next)
-    // console.log('NO CACHE!!! PAGE')
+    console.log('NO CACHE!!! PAGE')
     return {results: data.results, nextPage: data.next}
 }
 
