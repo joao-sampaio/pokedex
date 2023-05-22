@@ -15,15 +15,18 @@ const updatePagesCache = (newResults, nextPage) => {
 export const get_page = async (url) => {
     const cache = getPagesCache()
     if (!url && cache && url === cache.nextPage) {
-        console.log('CACHE PAGE')
+        // console.log('CACHE PAGE')
         return new Promise((resolve, reject) => {
             resolve(cache)
         })
     }
     const response = await fetch(url ? url : BASE_URL);
     const data = await response.json()
+    if (!url) {
+        data.results.splice(3, 3)
+    }
     updatePagesCache(data.results, data.next)
-    console.log('NO CACHE!!! PAGE')
+    // console.log('NO CACHE!!! PAGE')
     return {results: data.results, nextPage: data.next}
 }
 
@@ -48,7 +51,7 @@ export const get_pokemon = async (url) => {
 
     const cache = getPkmCache()
     if (cache && id in cache) {
-        console.log('CACHE PKM')
+        // console.log('CACHE PKM')
         return new Promise((resolve, reject) => {
             resolve(cache[id])
         })
@@ -65,6 +68,6 @@ export const get_pokemon = async (url) => {
     delete data.sprites
     data.types = data.types.map((type) => type.type.name)
     updatePkmCache(data)
-    console.log('NO CACHE!!! PKM')
+    // console.log('NO CACHE!!! PKM')
     return data
 }
