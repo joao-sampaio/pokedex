@@ -128,6 +128,16 @@ body {
   border: rgb(168, 37, 37) 3px solid;
 }
 
+.random-button {
+  position: fixed;
+  bottom: 12px;
+  margin-left: 7px;
+  
+  border-radius: 0px 0px 10px 0px;
+  background-color: rgb(255, 84, 84);
+  border: rgb(168, 37, 37) 3px solid;
+}
+
 .wide {
   width: 100%;
   

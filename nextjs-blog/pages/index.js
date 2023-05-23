@@ -48,7 +48,7 @@ export default function Home() {
     <>
       <main>
         <Link href={random}>
-            <button  className='back-button'>Aleatório(mas não o charmander)</button>
+            <button  className='random-button'>Aleatório(mas não o charmander)</button>
         </Link>
         <div className='pokedex'>
           {
