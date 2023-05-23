@@ -16,7 +16,7 @@ export default function Details() {
     }
 
     useEffect( () => {
-        if(!id) {
+        if(!id || (id > 2 && id < 7)) {
             return;
         }
         load_page()

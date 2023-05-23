@@ -1,4 +1,4 @@
-const BASE_URL = "https://pokeapi.co/api/v2/pokemon/"
+export const BASE_URL = "https://pokeapi.co/api/v2/pokemon/"
 
 const getPagesCache = () => {
     const data = localStorage.getItem('pages')
@@ -26,7 +26,7 @@ export const get_page = async (url) => {
         data.results.splice(3, 3)
     }
     updatePagesCache(data.results, data.next)
-    console.log('NO CACHE!!! PAGE')
+    // console.log('NO CACHE!!! PAGE')
     return {results: data.results, nextPage: data.next}
 }
 
