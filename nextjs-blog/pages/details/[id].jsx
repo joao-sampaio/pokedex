@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import TypeCard from '../../components/types-card';
+import RandBtn from '../../components/random-btn';
 
 export default function Details() {
     const [data, setData] = useState({})
@@ -27,6 +28,7 @@ export default function Details() {
         <Link href={`/`}>
             <button  className='back-button'>back</button>
         </Link>
+        <RandBtn />
         <div className='details'>
             <img className='sprite' src={ data.sprite } alt={ `${data.name} sprite` } />
             <div className='transparent-div wide'>
@@ -40,7 +42,13 @@ export default function Details() {
                 <p className=''>{`height: ${data.height/10} m`}</p>
                 <p className=''>{`weight: ${data.weight/10} kg`}</p>
             </div>
-            <div className='flex red-div wide'>
+            <div className='red-div wide'>
+                <Link href={`/details/${id - 1}`}>
+                    <button className='details-button'>{"<"}</button>
+                </Link>
+                <Link href={`/details/${id/1 + 1}`}>
+                    <button className='details-button'>{">"}</button>
+                </Link>
             </div>
         </div>
         </div>

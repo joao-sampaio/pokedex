@@ -1,22 +1,13 @@
-import Link from 'next/link';
 import PokemonCard from '../components/pokemon-card';
 import { get_page, get_pokemon } from '../services/requests';
 import { useState, useEffect } from 'react';
+import RandBtn from '../components/random-btn';
 
-
-const get_random = () => {
-  let r = Math.floor(Math.random() * 650)
-  while (r > 2 && r < 7) {
-    r = Math.floor(Math.random() * 650)
-  }
-  return r;
-}
 
 export default function Home() {
   const [page, setPage] = useState(1)
   const [pkmList, setPkmList] = useState([])
   const [next, setNext] = useState(null)
-  const [random, setRandom] = useState(`details/${get_random()}`)
   const load_page = async () => {
     const {results, nextPage} = await get_page(next)
     const newList = await Promise.all(results.map( async (raw) => {
@@ -25,7 +16,6 @@ export default function Home() {
     setNext(nextPage)
     setPkmList([...pkmList, ...newList])
     setPage(page + 1)
-    setRandom(`details/${get_random()}`)
   }
 
   useEffect( () => {
@@ -47,9 +37,7 @@ export default function Home() {
   return (
     <>
       <main>
-        <Link href={random}>
-            <button  className='random-button'>Aleatório(mas não o charmander)</button>
-        </Link>
+        <RandBtn />
         <div className='pokedex'>
           {
             pkmList.map((pkm, index) => {
