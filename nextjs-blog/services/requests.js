@@ -22,9 +22,6 @@ export const get_page = async (url) => {
     }
     const response = await fetch(url ? url : BASE_URL);
     const data = await response.json()
-    if (!url) {
-        data.results.splice(3, 3)
-    }
     updatePagesCache(data.results, data.next)
     // console.log('NO CACHE!!! PAGE')
     return {results: data.results, nextPage: data.next}
@@ -47,7 +44,6 @@ const updatePkmCache = (newPkm) => {
 
 export const get_pokemon = async (url) => {
     const id = url.length > 5 ? url.match(/\/\d+\//)[0].replace('/', '').replace('/', '') : url
-    // const id = url.length > 5 ? url.match(/\/\w+\//i)[0].replace('/', '').replace('/', '') : url
 
     const cache = getPkmCache()
     if (cache && id in cache) {
