@@ -1,4 +1,4 @@
-const BASE_URL = "https://pokeapi.co/api/v2/pokemon/"
+export const BASE_URL = "https://pokeapi.co/api/v2/pokemon/"
 
 const getPagesCache = () => {
     const data = localStorage.getItem('pages')
@@ -15,7 +15,7 @@ const updatePagesCache = (newResults, nextPage) => {
 export const get_page = async (url) => {
     const cache = getPagesCache()
     if (!url && cache && url === cache.nextPage) {
-        console.log('CACHE PAGE')
+        // console.log('CACHE PAGE')
         return new Promise((resolve, reject) => {
             resolve(cache)
         })
@@ -23,7 +23,7 @@ export const get_page = async (url) => {
     const response = await fetch(url ? url : BASE_URL);
     const data = await response.json()
     updatePagesCache(data.results, data.next)
-    console.log('NO CACHE!!! PAGE')
+    // console.log('NO CACHE!!! PAGE')
     return {results: data.results, nextPage: data.next}
 }
 
@@ -44,11 +44,10 @@ const updatePkmCache = (newPkm) => {
 
 export const get_pokemon = async (url) => {
     const id = url.length > 5 ? url.match(/\/\d+\//)[0].replace('/', '').replace('/', '') : url
-    // const id = url.length > 5 ? url.match(/\/\w+\//i)[0].replace('/', '').replace('/', '') : url
 
     const cache = getPkmCache()
     if (cache && id in cache) {
-        console.log('CACHE PKM')
+        // console.log('CACHE PKM')
         return new Promise((resolve, reject) => {
             resolve(cache[id])
         })
@@ -65,6 +64,6 @@ export const get_pokemon = async (url) => {
     delete data.sprites
     data.types = data.types.map((type) => type.type.name)
     updatePkmCache(data)
-    console.log('NO CACHE!!! PKM')
+    // console.log('NO CACHE!!! PKM')
     return data
 }

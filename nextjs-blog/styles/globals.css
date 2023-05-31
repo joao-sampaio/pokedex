@@ -66,9 +66,8 @@ body {
 
 .pokedex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .pokemon-card {
@@ -128,6 +127,44 @@ body {
   border: rgb(168, 37, 37) 3px solid;
 }
 
+.random-button {
+  position: fixed;
+  bottom: 12px;
+  margin-left: 7px;
+  
+  border-radius: 0px 0px 10px 0px;
+  border: #dddddd 3px solid;
+  
+  background: linear-gradient(-45deg, #ffeb3b, #74efff, #9c27b0);
+  background-size: 400% 400%;
+  animation: gradient-bg 7s ease infinite;
+}
+
+.details-button {
+  color: rgb(255, 255, 255);
+  font-size: x-large;
+  border-radius: 100%;
+  background-color: #606dbc;
+  border: rgb(255, 255, 255) 3px solid;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s;
+}
+.details-button:active {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes gradient-bg {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
+}
+
 .wide {
   width: 100%;
   
@@ -165,9 +202,12 @@ body {
 }
 .red-div {
   background-color: rgb(222, 25, 25);
-  flex: 3 0 auto;
+  display: flex;
+  justify-content: space-around;
+  /* flex: 3 0 auto; */
   height: 800px;
 }
+
 
 .type-card {
   border: #000 outset 2px;

@@ -1,6 +1,7 @@
 import PokemonCard from '../components/pokemon-card';
 import { get_page, get_pokemon } from '../services/requests';
 import { useState, useEffect } from 'react';
+import RandBtn from '../components/random-btn';
 
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
   }, [])
 
   useEffect( () => {
-    console.log(window.innerHeight, window.innerHeight + window.pageYOffset, document.body.offsetHeight)
+    // console.log(window.innerHeight, window.innerHeight + window.pageYOffset, document.body.offsetHeight)
     const timer = setInterval(() => {
       if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2*window.innerHeight/3) {
         load_page()
@@ -32,9 +33,11 @@ export default function Home() {
     return () => clearTimeout(timer);
   })
 
+
   return (
     <>
       <main>
+        <RandBtn />
         <div className='pokedex'>
           {
             pkmList.map((pkm, index) => {
